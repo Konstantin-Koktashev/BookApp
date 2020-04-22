@@ -1,4 +1,4 @@
-import { BookServices } from '../services/bookServices.js';
+import { bookServices } from '../services/bookServices.js';
 
 
 
@@ -6,12 +6,13 @@ export  class BookDetails extends React.Component {
     
     
     render() {
+        console.log("BookDetails -> render -> this.props", this.props)
         const { book, onBack ,onEdit,onDelete} = this.props
         
         return (
             <div>
                 <h1>{book.volumeInfo.title}</h1>
-                    <h4>By :{BookServices.getAuthorNames(book)}</h4>
+                    <h4>By :{bookServices.getAuthorNames(book)}</h4>
                     <p className="summary">Summary:
                     {book.searchInfo.textSnippet}</p>
                     <p className="full-description">{book.volumeInfo.description}</p>
